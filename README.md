@@ -23,6 +23,9 @@ This software is designed to help Rajesh Power Service Ltd manage goods, improve
 ---
 
 ## 📂 Project Structure
+/frontend   → React + Tailwind CSS (UI)
+/backend    → Laravel + MySQL (API & Business Logic)
+
 
 ---
 
