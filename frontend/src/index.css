@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ .box-shadow-1{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ }
+ .box-shadow-2{
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ }
+.electric-border {
+  position: relative;
+  border-radius: 12px;
+}
+
+.electric-border::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 15px;
+  background: repeating-linear-gradient(
+    90deg,
+    #0ff,
+    #0ff 2px,
+    #00f 4px,
+    #fff 6px,
+    #0ff 8px
+  );
+  background-size: 200% 200%;
+  animation: electricFlow 0.3s linear infinite, electricFlicker 0.15s infinite;
+  filter: blur(2px) brightness(2);
+  z-index: 1;
+}
+
+@keyframes electricFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes electricFlicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.3;
+  }
+}
